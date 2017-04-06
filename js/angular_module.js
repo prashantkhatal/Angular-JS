@@ -4,15 +4,30 @@
 * Description
 */
 app = angular.module('myApp', []).controller('myController', function($scope){
-	$scope.myVar = 'Yehhh Worked';
+	
+	let sortDirection;
 
-	let employees = [	{name:'prashant', surname:'khatal'},
-						{name:'sachin', surname:'wagh'},
-						{name:'mohit', surname:'kogta'},
-						{name:'Chinmay', surname:'waghmare'}
+	$scope.myVar	 = 'Yehhh Worked';
+	$scope.employees = [
+						{name:'prashant', surname:'khatal', salary: 10000},
+						{name:'sachin', surname:'wagh', salary: 50000},
+						{name:'mohit', surname:'kogta', salary: 40000},
+						{name:'Chinmay', surname:'waghmare', salary: 30000}
 					];
 
-	$scope.employees = employees;
+	$scope.sortByField = function(sortField){
+		sortDirection = ( sortDirection == 'asc' ) ? 'desc' : 'asc';
+		employees.sort(function(emp1,emp2){
+			return (sortDirection == 'asc') ? ( emp1[sortField] > emp2[sortField] ) : ( emp1[sortField] < emp2[sortField] );
+		});
+	}
+
+});
+
+app.filter('addTitles', function(){
+	return function(name, title){
+		return title + name.charAt(0).toUpperCase() + name.slice(1);
+	}
 });
 
 app.run(function($rootScope){

@@ -18,27 +18,37 @@
 			<div class='parent'>
 				<div class='left'>
 					Enter Text: <input type="text" ng-model='name'>
-					<span> <br/>Inline : <p ng-bind="name"></p></span>
+					<span> <br/>Inline : <p ng-bind="name|uppercase"></p></span>
 					From Controller: <span>{{myVar}}</span>
 				</div>
 				<div class='left' style='background-color: {{colorName}}'>
 					Enter Color name: <input type="text" ng-model='colorName'>
 				</div>
 				<div class='myOwnDirective' my-own-directive></div>
-			</div>
 			<div class='left'>
 				<strong>=>This is ng-model status classes reflection</strong><br/>
 				Enter Email: <input type="email" ng-model='email'>
 			</div>
+			</div>
+
 			<div class="parent">
+				Enter Filter By value: <input type="text" ng-model='filterBy'> <strong>|filter:filterBy</strong>
+				<br/><br/>
 				<table border="1">
-					<tr><th>Name</th><th>Surname</th></tr>
-					<tr ng-repeat="employee in employees">
+					<tr>
+						<th ng-click="sortByField('name')">Name</th>
+						<th ng-click="sortByField('surname')">Surname</th>
+						<th ng-click="sortByField('salary')">Salary</th>
+					</tr>
+					<tr ng-repeat="employee in employees|orderBy:sortBy|filter:filterBy">
 						<td>
-							{{employee.name}}
+							{{employee.name|addTitles:'Mr. '}}
 						</td>
 						<td>
 							{{employee.surname}}
+						</td>
+						<td>
+							{{employee.salary|currency:'Rs: '}}
 						</td>
 					</tr>
 				</table>

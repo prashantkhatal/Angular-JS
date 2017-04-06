@@ -15,7 +15,7 @@ p {
 .parent{
 	position: relative;
 	clear: both;
-	padding-top: 20px
+	padding-top: 20px;
 }
 
 .child{
@@ -24,4 +24,9 @@ p {
 
 .ng-invalid{
 	background-color:pink;
+}
+
+table th {
+	cursor:pointer;
+	background-color: gray;
 }
