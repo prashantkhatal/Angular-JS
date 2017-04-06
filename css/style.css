@@ -2,3 +2,26 @@ p {
     border: 1px dashed red;
     height: 25px;
 }
+.left {
+    float: left;
+    margin-right: 25px;
+    border: 1px dotted red;
+    padding: 15px;
+}
+
+.right {
+    float: right;
+}
+.parent{
+	position: relative;
+	clear: both;
+	padding-top: 20px
+}
+
+.child{
+	position:absolute;
+}
+
+.ng-invalid{
+	background-color:pink;
+}

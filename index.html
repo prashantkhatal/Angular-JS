@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
 	<head>
 		<title>This is my Project</title>
 
@@ -8,11 +11,40 @@
 		<script type="text/javascript" src='libraries/angular.js'></script>
 		<script type="text/javascript" src='js/angular_module.js'></script>
 	</head>
-	<body ng-app="myApp" ng-controller="myController">
-
-		<h1>This is My First Page</h1>
-		<input type="text" ng-model='name'>
-		<span> <br/>Inline : <p ng-bind="name"></p></span>
-		From Controller: <span>{{myVar}}</span>
+	<body data-ng-app="myApp" >
+		<h1>This is My First Page and <span style="color:red">{{rootScopeVariable}}</span></h1>
+		<div ng-controller="myController">
+			
+			<div class='parent'>
+				<div class='left'>
+					Enter Text: <input type="text" ng-model='name'>
+					<span> <br/>Inline : <p ng-bind="name"></p></span>
+					From Controller: <span>{{myVar}}</span>
+				</div>
+				<div class='left' style='background-color: {{colorName}}'>
+					Enter Color name: <input type="text" ng-model='colorName'>
+				</div>
+				<div class='myOwnDirective' my-own-directive></div>
+			</div>
+			<div class='left'>
+				<strong>=>This is ng-model status classes reflection</strong><br/>
+				Enter Email: <input type="email" ng-model='email'>
+			</div>
+			<div class="parent">
+				<table border="1">
+					<tr><th>Name</th><th>Surname</th></tr>
+					<tr ng-repeat="employee in employees">
+						<td>
+							{{employee.name}}
+						</td>
+						<td>
+							{{employee.surname}}
+						</td>
+					</tr>
+				</table>
+			</div>
+			<my-directive></my-directive>
+			<p my-directive></p>
+		</div>
 	</body>
 </html>
