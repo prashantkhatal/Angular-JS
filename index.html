@@ -2,8 +2,17 @@
 <html>
 	<head>
 		<title>This is my Project</title>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<script type="text/javascript" src='libraries/angular.js'></script>
+		<script type="text/javascript" src='js/angular_module.js'></script>
 	</head>
-	<body>
+	<body ng-app="myApp" ng-controller="myController">
+
 		<h1>This is My First Page</h1>
+		<input type="text" ng-model='name'>
+		<span> <br/>Inline : <p ng-bind="name"></p></span>
+		From Controller: <span>{{myVar}}</span>
 	</body>
 </html>
