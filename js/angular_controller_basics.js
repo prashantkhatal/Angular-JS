@@ -17,15 +17,20 @@ app.controller('myController', function($scope){
 		});
 	}
 
+	$scope.showCoordinate = function(event){
+		$scope.x = event.clientX;
+		$scope.y = event.clientY;
+	}
+
 	$scope.selectOptions = [{id:1, label:'Yes'}, {id:5, label:'No'}, {id:3, label:'Can\'t say'}];
 
-	$scope.selectOptionsObject = {prashant:'Khatal',
-								  Mohit: 'Maheshwari',
-								  Sachin: 'Wagh',
-								  Chinmay: 'WaghMare'
-									}
+	$scope.selectOptionsObject = { prashant:'Khatal',
+								   Mohit: 'Maheshwari',
+								   Sachin: 'Wagh',
+								   Chinmay: 'WaghMare'
+								}
  
-	$scope.myVar = 'Yehhh Worked';
+	$scope.myVar = 'Click Me';
 	$scope.employees = employees;
 
 });

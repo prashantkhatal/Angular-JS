@@ -14,13 +14,15 @@
 	</head>
 	<body data-ng-app="myApp" >
 		<h1>This is My First Page and <span style="color:red">{{rootScopeVariable}}</span></h1>
-		<div ng-controller="myController">
+		<div ng-controller="myController" ng-init="count=0" ng-mousemove="showCoordinate($event);">
 			
+			Coordinates in div : {{ x + ', ' + y}}
+
 			<div class='parent'>
 				<div class='left'>
-					Enter Text: <input type="text" ng-model='name'>
+					Enter Text: <input type="text" ng-model='name' placeholder="CAPITALIZE HERE">
 					<span> <br/>Inline : <p ng-bind="name|uppercase"></p></span>
-					From Controller: <span>{{myVar}}</span>
+					From Controller: <span style='border:2px solid Black' ng-click='count=count+1'>{{myVar}}</span> : Clicked : {{count}}
 				</div>
 				<div class='left' style='background-color: {{colorName}}'>
 					Enter Color name: <input type="text" ng-model='colorName'>
