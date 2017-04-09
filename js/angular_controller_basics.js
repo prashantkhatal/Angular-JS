@@ -1,14 +1,9 @@
-/**
-* myApp Module;
-*
-* Description
-*/
-app = angular.module('myApp', []).controller('myController', function($scope){
+
+app.controller('myController', function($scope){
 	
 	let sortDirection;
 
-	$scope.myVar	 = 'Yehhh Worked';
-	$scope.employees = [
+	var employees = [
 						{name:'prashant', surname:'khatal', salary: 10000},
 						{name:'sachin', surname:'wagh', salary: 50000},
 						{name:'mohit', surname:'kogta', salary: 40000},
@@ -22,16 +17,23 @@ app = angular.module('myApp', []).controller('myController', function($scope){
 		});
 	}
 
+	$scope.selectOptions = [{id:1, label:'Yes'}, {id:5, label:'No'}, {id:3, label:'Can\'t say'}];
+
+	$scope.selectOptionsObject = {prashant:'Khatal',
+								  Mohit: 'Maheshwari',
+								  Sachin: 'Wagh',
+								  Chinmay: 'WaghMare'
+									}
+ 
+	$scope.myVar = 'Yehhh Worked';
+	$scope.employees = employees;
+
 });
 
 app.filter('addTitles', function(){
 	return function(name, title){
 		return title + name.charAt(0).toUpperCase() + name.slice(1);
 	}
-});
-
-app.run(function($rootScope){
-	$rootScope.rootScopeVariable = 'This is Root scope';
 });
 
 

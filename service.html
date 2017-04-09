@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<title>This is angualr service</title>
+	<script type="text/javascript" src='libraries/angular.js'></script>
+	<script type="text/javascript" src='js/angular_module_basics.js'></script>
+	<script type="text/javascript" src='js/angular_service.js'></script>
+	
+</head>
+	<body ng-app="myApp" ng-controller="myServiceController">
+		<h1>{{heading}}</h1>
+		<p>{{myService.mixIt('ABCDEF')}}</p>
+		<p>{{myFactoryService.addTitle('Prashant')}}</p>
+		
+		<button ng-click="myService.mixIt('ABCDEF')">Click</button>
+	</body>
+</html>

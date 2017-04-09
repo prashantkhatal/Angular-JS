@@ -9,7 +9,8 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 		<script type="text/javascript" src='libraries/angular.js'></script>
-		<script type="text/javascript" src='js/angular_module.js'></script>
+		<script type="text/javascript" src='js/angular_module_basics.js'></script>
+		<script type="text/javascript" src='js/angular_controller_basics.js'></script>
 	</head>
 	<body data-ng-app="myApp" >
 		<h1>This is My First Page and <span style="color:red">{{rootScopeVariable}}</span></h1>
@@ -30,17 +31,28 @@
 				Enter Email: <input type="email" ng-model='email'>
 			</div>
 			</div>
+			
+			<br/>
+			<br/>
+			Using Array:<select ng-model='mySelectedValue' ng-options="option.label for option in selectOptions track by option.id" ></select>{{mySelectedValue}}
+
+			<br/>
+			<br/>
+			Using Object: 
+			<select ng-model='mySelectedObject' ng-options="name for (name, surname) in selectOptionsObject track by surname"></select>
 
 			<div class="parent">
 				Enter Filter By value: <input type="text" ng-model='filterBy'> <strong>|filter:filterBy</strong>
 				<br/><br/>
 				<table border="1">
 					<tr>
+						<th >Sr no.</th>
 						<th ng-click="sortByField('name')">Name</th>
 						<th ng-click="sortByField('surname')">Surname</th>
 						<th ng-click="sortByField('salary')">Salary</th>
 					</tr>
 					<tr ng-repeat="employee in employees|orderBy:sortBy|filter:filterBy">
+						<td>{{$index+1}}</td>
 						<td>
 							{{employee.name|addTitles:'Mr. '}}
 						</td>
