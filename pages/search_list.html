@@ -15,7 +15,7 @@
 			<input class='searchbox' type="text" ng-model='searchItemName' placeholder="Enter Your Search item">
 		</div>
 		<ul class="list">
-			<li class='item' ng-repeat="item in list|filter:searchItemName">
+			<li class='item' ng-repeat="item in list|customSearchFilter:searchItemName">
 				<img ng-src='{{item.image}}' />
 				<p>{{item.content}}</p>
 			</li>

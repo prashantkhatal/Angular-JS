@@ -1,6 +1,6 @@
 app.controller('mySearchController', function($scope){
 	$scope.list = [{id:1, content:'News from center with detailed version', image:'../images/featured.jpg'}];
-
+	$scope.searchItemName = '';
 	$scope.addItem = function(){
 
 		$scope.isBlankContent = false;
@@ -13,4 +13,12 @@ app.controller('mySearchController', function($scope){
 		}
 	};
 
+});
+
+app.filter('customSearchFilter', function(){
+	return function(arr, searchItem){
+		return arr.filter(function(item){
+			return item.content.toLowerCase().indexOf(searchItem.toLowerCase()) !== -1;
+		})
+	}
 });
