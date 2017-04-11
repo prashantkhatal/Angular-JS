@@ -4,7 +4,11 @@ app.controller('myServiceController', function($scope, $http, myService, myFacto
 	$scope.myFactoryService = myFactoryService;
 
 	//will not work as no vhost defined
-	$http.get('index.html').then(function(res){
+	$http({method:'GET',
+			url:'https://docs.angularjs.org/guide/directive',
+			datatype:'jsonp',
+			headers: {'Access-Control-Allow-Origin':"*" },
+		}).then(function(res){
 
 		console.log(res);
 	});
@@ -14,7 +18,7 @@ app.controller('myServiceController', function($scope, $http, myService, myFacto
 
 app.service('myService', function(){
 	this.mixIt = function(string){
-		return string + '! Hey this is service.';
+		return string + '! Hey this is service. @' + Date();
 	}
 });
 

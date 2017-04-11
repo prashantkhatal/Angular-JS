@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search List</title>
+	<link rel="stylesheet" type="text/css" href="../css/search_list.css">
+
+	<script type="text/javascript" src='../libraries/angular.js'></script>
+	<script type="text/javascript" src='../js/angular_module_basics.js'></script>
+	<script type="text/javascript" src='../js/angular_search.js'></script>
+	
+</head>
+<body ng-app="myApp" ng-controller="mySearchController">
+	<div class='main'>
+		<div class='box'>
+			<input class='searchbox' type="text" ng-model='searchItemName' placeholder="Enter Your Search item">
+		</div>
+		<ul class="list">
+			<li class='item' ng-repeat="item in list|filter:searchItemName">
+				<img ng-src='{{item.image}}' />
+				<p>{{item.content}}</p>
+			</li>
+		</ul>
+		<p class='error' ng-show='isBlankContent'>Please Enter content</p>
+		<div class='add box'>
+			<input type="text" ng-model='contentStr' placeholder="Add Content">
+			<button ng-click="addItem()"> Add </button>
+		</div>
+	</div>
+</body>
+</html>

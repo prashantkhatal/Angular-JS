@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Directive</title>
+	<script type="text/javascript" src='../libraries/angular.js'></script>
+	<script type="text/javascript" src='../js/angular_module_basics.js'></script>
+	<script type="text/javascript" src='../js/angular_directives.js'></script>
+</head>
+<body ng-app="myApp" ng-controller="myDirectiveController">
+	<h1>{{heading}}</h1>
+	<div my-customer data-my-details='this is attribute' data-my-hdah='addd'>zxxx</div>
+	<div my-customer param='customer' data-my-details='this is attribute' data-my-hdah='addd'>second div</div>
+
+	<div my-customer param='customer'></div>
+
+	<div my-index-template></div>
+</body>
+</html>
