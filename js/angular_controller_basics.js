@@ -41,6 +41,13 @@ app.filter('addTitles', function(){
 	}
 });
 
+app.directive('myOwnDirective', function(){
+	// Runs during compile
+	return {
+		template:'Custom directive - Great work'
+	};
+});
+
 
 app.directive('myDirective', function(){
 	// Runs during compile

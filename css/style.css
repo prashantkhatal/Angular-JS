@@ -1,3 +1,6 @@
+* {
+	margin-top: 5px;
+}
 p {
     border: 1px dashed red;
     height: 25px;
