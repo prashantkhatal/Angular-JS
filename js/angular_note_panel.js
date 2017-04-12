@@ -12,9 +12,11 @@ app.controller('myController', function(){
 	};
 
 	this.addItem = function() {
-		this.bucket.push({id:this.id, name: this.item_name});
-		this.item_name = '';
-		this.id++;
+		if(this.item_name){
+			this.bucket.push({id:this.id, name: this.item_name});
+			this.item_name = '';
+			this.id++;
+		}
 	};
 
 });

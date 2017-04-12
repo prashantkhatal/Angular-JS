@@ -36,3 +36,11 @@
     width: 23%;
     margin-left: 10px;
 }
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    border: 1px dashed black;
+    padding: 5px 0;
+}
