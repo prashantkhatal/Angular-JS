@@ -1,0 +1,42 @@
+.container{
+	/*width:40%;*/
+	text-align: center;
+}
+
+nav{
+	background-color: #5597b4;
+	max-height: 80px;
+}
+
+nav a{
+	padding: 10px 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+a:focus{
+	background-color: #e35885;
+}
+
+.container p{
+	font-weight: bold;
+    font-size: 25px;
+    color: #7d9098;
+}
+
+.clicked-action{
+	color: white;
+    background-color: #6db2d0;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+nav.Home .Home,
+nav.Services .Services,
+nav.About.us .About.us,
+nav.Contacts .Contacts {
+	background-color: #e35885;
+}

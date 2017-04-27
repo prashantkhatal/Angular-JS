@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Navigation Panel</title>
+		<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+		
+		<script type="text/javascript" src="../libraries/angular.js"></script>
+		<script type="text/javascript" src="../js/angular_module_basics.js"></script>
+
+	</head>
+	<body ng-app="myApp">
+		<div class="container">
+			<nav class="{{active}}">
+				<a href="#" class="Home" ng-click="active='Home'">Home</a>
+				<a href="#" class="Services" ng-click="active='Services'">Services</a>
+				<a href="#" class="About us" ng-click="active='About us'">About us</a>
+				<a href="#" class="Contacts" ng-click="active='Contacts'">Contacts</a>
+			</nav>
+
+			<p ng-hide='active'>Please click a menu item</p>
+
+			<p ng-show='active'>You have clicked <span class='clicked-action'>{{active}}</span></p>
+		</div>
+	</body>
+</html>
