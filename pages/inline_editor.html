@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Inline Editor</title>
+		<link rel="stylesheet" type="text/css" href="../css/inline_editor.css">
+		
+		<script type="text/javascript" src="../libraries/angular.js"></script>
+		<script type="text/javascript" src="../js/angular_module_basics.js"></script>
+	</head>
+	<body ng-app="myApp" ng-init="text='Click here to edit';">
+		<div  class="container">
+			<div class='editor' ng-show="isEdit">
+				<input ng-model='text' type="text" name="" ng-blur="isEdit=false;" >
+			</div>
+
+			<div ng-click="isEdit=true;" class="view">
+				<span>{{text}}</span>
+			</div>
+		</div>
+
+	</body>
+</html>

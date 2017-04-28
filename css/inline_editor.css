@@ -1,0 +1,43 @@
+body{
+    text-align: center;
+}
+
+.container{
+	width: 190px;
+}
+
+.editor{
+    background-color: #5c9bb7;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+input{
+	margin: 7px;
+	font-size: 16px;
+	border: none;
+	width: 90%;
+    font-weight: bold;
+    text-align: center;
+    color: #5c9bb7;
+}
+
+.editor:after{
+	content: '';
+    border: 6px solid red;
+    border-color: #5c9bb7 transparent transparent;
+    left: 50%;
+    position: absolute;
+    bottom: -12px;
+    margin-left: -6px;
+}
+
+.view{
+	font-size: 20px;
+    font-weight: bold;
+    color:#6d8088;
+}
+
+.view:before{
+	content: '!';
+}
