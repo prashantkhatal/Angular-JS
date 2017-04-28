@@ -1,0 +1,30 @@
+.container {
+	width: 500px;
+}
+
+.container form {
+	background-color: #61a1bc;
+	text-align: center;
+}
+
+.title {
+	font-family: 'Cookie', cursive;
+}
+
+.row {
+	border: 1px solid red;
+	margin: auto 2%;
+	position: relative;
+}
+
+span.item {
+	position: absolute;
+	left: 0;
+	font-weight: bold;
+}
+
+span.price {
+	position: absolute;
+	right: 0;
+	font-weight: bold;
+}
